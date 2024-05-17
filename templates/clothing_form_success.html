@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clothing Form Success</title>
+</head>
+<body>
+<h1>Clothing Preferences</h1>
+<p>Based on your choices:</p>
+<ul>
+    {% for clothing_preference in clothing_preferences %}
+        <li>
+            <strong>Age:</strong> {{ clothing_preference.age }},
+            <strong>Gender:</strong> {{ clothing_preference.gender }},
+            <strong>Clothing Type:</strong> {{ clothing_preference.clothing_type }},
+            <strong>Season:</strong> {{ clothing_preference.season }}
+            {% if clothing_preference.image %}
+                <br>
+                <img src="{{ clothing_preference.image.url }}" alt="Clothing Image" style="max-width: 200px;">
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No clothing preferences found for your criteria.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
