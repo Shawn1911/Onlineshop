@@ -21,4 +21,4 @@ def clothing_form_view(request):
     else:
         form = ClothingForm()
 
-    return render(request, 'clothing_form.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
